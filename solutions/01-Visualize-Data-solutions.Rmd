@@ -1,0 +1,107 @@
+---
+title: "Visualize Data (solutions)"
+output: html_document
+---
+
+```{r setup}
+library(tidyverse)
+library(unienrollment)
+```
+
+```{r}
+income
+```
+
+
+## Your Turn 1
+
+Run the code on the slide to make a graph. Pay strict attention to spelling, capitalization, and parentheses!
+
+```{r}
+# remove
+ggplot(data = income) +
+  geom_point(mapping = aes(x = income_2yr, y = income_5yr)) 
+```
+
+## Your Turn 2
+
+Add `color`, `size`, `alpha`, and `shape` aesthetics to your graph. Experiment.  
+
+```{r}
+ggplot(data = income) +
+  geom_point(mapping = aes(x = income_2yr, y = income_5yr, color = degree_type))
+```
+
+## Your Turn 3
+
+Replace this scatterplot with one that draws boxplots. Use the cheatsheet. Try your best guess.
+
+```{r}
+ggplot(income) + geom_boxplot(aes(degree_type, income_5yr))
+```
+
+## Your Turn 4
+
+Make a histogram of the `income_5yr` variable from `income`.
+
+```{r}
+ggplot(income) + geom_histogram(aes(income_5yr))
+```
+
+## Your Turn 5
+
+Make a density plot of `income_5yr` colored by `degree_type`.
+
+```{r}
+ggplot(income) + geom_density(aes(income_5yr, color = degree_type))
+```
+
+## Your Turn 6
+
+Make a bar chart of `degree_type` colored by `degree_type`.
+
+```{r}
+ggplot(income) + geom_bar(aes(x = degree_type, fill = degree_type))
+```
+
+## Your Turn 7
+
+Predict what this code will do. Then run it.
+
+```{r}
+ggplot(income) + 
+  geom_point(aes(income_2yr, income_5yr)) +
+  geom_smooth(aes(income_2yr, income_5yr))
+```
+
+## Your Turn 8
+
+What does `getwd()` return?
+
+```{r}
+getwd()
+```
+
+## Your Turn 9
+
+Save the last plot and then locate it in the files pane.
+
+```{r}
+ggsave("my_plot.pdf", height = 6, width = 6)
+```
+
+***
+
+# Take aways
+
+You can use this code template to make thousands of graphs with **ggplot2**.
+
+```{r eval = FALSE}
+ggplot(data = <DATA>) +
+  <GEOM_FUNCTION>(mapping = aes(<MAPPINGS>))
+```
+
+# More practice
+
+- The [Data Visualization](https://r4ds.had.co.nz/data-visualisation.html) chapter of [R for Data Science](https://r4ds.had.co.nz/)
+- The [Data Visualization Primer](https://rstudio.cloud/learn/primers/3) from [RStudio Cloud](http://rstudio.cloud)
