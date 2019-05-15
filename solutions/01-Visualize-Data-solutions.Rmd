@@ -37,7 +37,8 @@ ggplot(data = income) +
 Replace this scatterplot with one that draws boxplots. Use the cheatsheet. Try your best guess.
 
 ```{r}
-ggplot(income) + geom_boxplot(aes(degree_type, income_5yr))
+ggplot(income) + 
+  geom_boxplot(aes(degree_type, income_5yr))
 ```
 
 ## Your Turn 4

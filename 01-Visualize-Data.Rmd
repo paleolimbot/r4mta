@@ -5,11 +5,11 @@ output: html_notebook
 
 ```{r setup}
 library(tidyverse)
-library(geoscidata)
+library(unienrollment)
 ```
 
 ```{r}
-warwick
+income
 ```
 
 
@@ -26,8 +26,8 @@ Run the code on the slide to make a graph. Pay strict attention to spelling, cap
 Add `color`, `size`, `alpha`, and `shape` aesthetics to your graph. Experiment.  
 
 ```{r}
-ggplot(data = warwick) +
-  geom_point(mapping = aes(x = Rb_ppm, y = K_ppm))
+ggplot(data = income) +
+  geom_point(mapping = aes(x = income_2yr, y = income_5yr))
 ```
 
 ## Your Turn 3
@@ -35,13 +35,13 @@ ggplot(data = warwick) +
 Replace this scatterplot with one that draws boxplots. Use the cheatsheet. Try your best guess.
 
 ```{r}
-ggplot(warwick) + 
-  geom_point(aes(rock_name, K_ppm))
+ggplot(income) + 
+  geom_point(aes(degree_type, income_5yr))
 ```
 
 ## Your Turn 4
 
-Make a histogram of the `K_ppm` variable from `warwick`.
+Make a histogram of the `income_5yr` variable from `income`.
 
 ```{r}
 
@@ -49,7 +49,7 @@ Make a histogram of the `K_ppm` variable from `warwick`.
 
 ## Your Turn 5
 
-Make a density plot of `K_ppm` colored by `rock_type`.
+Make a density plot of `income_5yr` colored by `rock_type`.
 
 ```{r}
 
@@ -68,9 +68,9 @@ Make a bar chart of `rock_type` colored by `rock_type`.
 Predict what this code will do. Then run it.
 
 ```{r}
-ggplot(warwick) + 
-  geom_point(aes(Rb_ppm, K_ppm)) +
-  geom_smooth(aes(Rb_ppm, K_ppm))
+ggplot(income) + 
+  geom_point(aes(income_2yr, income_5yr)) +
+  geom_smooth(aes(income_2yr, income_5yr))
 ```
 
 ## Your Turn 8
