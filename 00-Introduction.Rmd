@@ -52,10 +52,10 @@ Do you remember how to load the core tidyverse packages? Load them in the chunk 
 
 ```
 
-To make learning R visualization more fun in the context of geology, we will also load a package called "geoscidata" in all of our exercises.
+To make learning R visualization more fun, we will also load a package called "unienrollment" in all of our exercises.
 
 ```{r}
-# I've already installed the "geoscidata" package on this server
+# I've already installed the "unienrollment" package on this server
 # So all you need to do is load it
 
 ```
